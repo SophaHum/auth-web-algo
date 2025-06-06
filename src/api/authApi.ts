@@ -1,6 +1,6 @@
 import { Algorithm, ApiResponse, LoginResponse } from '../types';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = 'http://localhost:7001/AuthBackend/api';
 
 async function handleResponse(response: Response) {
   if (!response.ok) {
@@ -27,14 +27,14 @@ export const authApi = {
     return handleResponse(response);
   },
 
-  async login(email: string, password: string): Promise<ApiResponse<LoginResponse>> {
+  async login(username: string, password: string): Promise<ApiResponse<LoginResponse>> {
     const response = await fetch(`${API_BASE_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
+        username,
         password,
       }),
     });
