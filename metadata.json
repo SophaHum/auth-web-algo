@@ -1,0 +1,5 @@
+{
+  "name": "Algorithm Demo App",
+  "description": "A React application to demonstrate mock hashing algorithms with user authentication. Users can register, login, select different hashing algorithms, input text, and see a simulated hash output.",
+  "requestFramePermissions": []
+}
